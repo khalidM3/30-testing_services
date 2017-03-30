@@ -23,7 +23,7 @@ context.keys().forEach( key => {
 context = require.context('./view/', true, /\.js$/);
 console.log('CONTEXT2', context);
 context.keys().forEach( key => {
-   console.log('k',key);
+  console.log('k',key);
   let name = pascalcase(path.basename(key, '.js'));
   let module = context(key);
   cfgram.controller(name, module);
@@ -43,5 +43,5 @@ context.keys().forEach( key => {
   let name = camelcase(path.basename(key, '.js'));
   let module = context(key);
   cfgram.component(name, module);
-})
+});
 

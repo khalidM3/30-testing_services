@@ -1,6 +1,6 @@
 header {
   width: 100%;
-  height: 5vw;
+  height: 6vw;
   background-color: black;
   color: lightgrey;
 
@@ -17,8 +17,12 @@ header {
   ul{
     margin-left: 10%;
     padding-top: 5px;
+    
   }
   li{
     display: inline-block;
+    &:last-child{
+     margin-left: 90%;
+    }
   }
 }

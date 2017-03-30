@@ -11,7 +11,7 @@ function authService($q, $log, $http, $window){
   function setToken(_token){
     $log.debug('authService.setToken');
 
-    if(!_token) {
+    if(! _token) {
       return $q.reject(new Error('no token'));
     }
 
@@ -38,7 +38,7 @@ function authService($q, $log, $http, $window){
     let url = `${__API_URL__}/api/signup`;
     let config = {
       headers: {
-        'Content-type': 'application/json',
+        'Content-Type': 'application/json',
         'Accept': 'application/json'
       }
     };
@@ -52,7 +52,7 @@ function authService($q, $log, $http, $window){
       $log.error('failure:', err.message);
       return $q.reject(err);
     });
-  }
+  };
 
   service.logout = function(){
     $log.debug('authService.logout');
@@ -60,7 +60,7 @@ function authService($q, $log, $http, $window){
     $window.localStorage.removeItem('token');
     token = null;
     return $q.resolve();
-  }
+  };
 
   service.login = function(user){
     $log.debug('authService.login');
