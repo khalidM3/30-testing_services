@@ -22,8 +22,8 @@
   * `webpack.config.js`
     * this should include all of the production environment configurations used in lecture code
   * `karma.config.js`
-  * **note:** *do not* forget to `npm uninstall -D camelcase` and reinstall it to use version 3.0 (`npm i -S camelcase@3.0.0`)
 
 ## Description
-  * As discussed in class today - the requirement is to create a test for at least one method on your `auth-service` and `gallery-service`
+  * The requirement for today is to create a test for at least one method on your `auth-service` and `gallery-service`
+  * You should also create a test for deleting a gallery, based on your `gallery-service`
   * Feel free to write a series of additional tests and/or test your `pic-service`
