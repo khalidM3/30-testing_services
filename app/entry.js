@@ -10,20 +10,21 @@ const
   uiRouter = require('angular-ui-router'),
   ngTouch = require('angular-touch'),
   ngAnimate = require('angular-animate'),
+  ngFileUpload = require('ng-file-upload'),
 
-  cfgram = angular.module('cfgram', [ngTouch, ngAnimate, uiRouter]);
+  cfgram = angular.module('cfgram', [ngTouch, ngAnimate, uiRouter, ngFileUpload]);
 
 let context = require.context('./config/', true, /\.js$/);
-console.log('CONTEXT', context);
+// console.log('CONTEXT', context);
 context.keys().forEach( key => {
-  console.log('k',key);
+  // console.log('k',key);
   cfgram.config(context(key));
 });
 
 context = require.context('./view/', true, /\.js$/);
-console.log('CONTEXT2', context);
+// console.log('CONTEXT2', context);
 context.keys().forEach( key => {
-  console.log('k',key);
+  // console.log('k',key);
   let name = pascalcase(path.basename(key, '.js'));
   let module = context(key);
   cfgram.controller(name, module);
@@ -31,7 +32,7 @@ context.keys().forEach( key => {
 
 context = require.context('./service/', true, /\.js$/);
 context.keys().forEach(key => {
-   console.log('k',key);
+  //  console.log('k',key);
   let name = camelcase(path.basename(key, '.js'));
   let module = context(key);
   cfgram.service(name, module);
@@ -39,7 +40,7 @@ context.keys().forEach(key => {
 
 context = require.context('./component', true, /\.js$/);
 context.keys().forEach( key => {
-   console.log('k',key);
+  //  console.log('k',key);
   let name = camelcase(path.basename(key, '.js'));
   let module = context(key);
   cfgram.component(name, module);

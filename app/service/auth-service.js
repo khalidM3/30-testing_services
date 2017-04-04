@@ -16,6 +16,7 @@ function authService($q, $log, $http, $window){
     }
 
     $window.localStorage.setItem('token', _token);
+    console.log('Ma TOKEEEEEEN>>>>>', _token);
     token = _token;
     return $q.resolve(token);
   }
@@ -42,10 +43,10 @@ function authService($q, $log, $http, $window){
         'Accept': 'application/json'
       }
     };
-
+    console.log('LOOK AT ME NOW!');
     return $http.post(url, user, config)
     .then( res => {
-      $log.log('success ', res.data);
+      $log.log('+++++++++++++++success ', res);
       return setToken(res.data);
     })
     .catch( err => {
